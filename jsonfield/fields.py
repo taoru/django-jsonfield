@@ -58,6 +58,7 @@ class JSONFieldBase(six.with_metaclass(SubfieldBase, models.Field)):
 
     def __init__(self, *args, **kwargs):
         self.dump_kwargs = kwargs.pop('dump_kwargs', {
+            'ensure_ascii': False,
             'cls': JSONEncoder,
             'separators': (',', ':')
         })
